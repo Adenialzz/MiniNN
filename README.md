@@ -3,7 +3,8 @@
 ### Running
 
 ```shell
-cd simplestnn
+git clone git@github.com:Adenialzz/MiniNN.git -b simplestnn
+cd simplestnn/
 python main.py
 ```
 

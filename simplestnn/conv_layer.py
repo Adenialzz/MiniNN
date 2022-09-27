@@ -52,7 +52,6 @@ class Conv2D(Layer):
         out_w = (in_w - k_w) // s_w + 1
         Z = Z.reshape(batch_sz, out_h, out_w, out_c)
 
-        # import pdb; pdb.set_trace()
         Z += self.params['b']
 
         self.ctx = {'X_shape': X.shape, 'col': col, 'W': W}
@@ -82,7 +81,6 @@ class Conv2D(Layer):
 
         # cut off gradients of padding
         d_in = d_in[:, pad_h[0]: in_h - pad_h[1], pad_w[0]: in_w - pad_w[1], :]
-        # d_in = d_in[:, pad_h[0]: in_h - pad_h[1], pad_w[0] :in_w - pad_w[1], :]
         return d_in
             
 
